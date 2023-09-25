@@ -29,7 +29,6 @@ export class Contaxt extends Component {
   };
   handleSave = (e) => {
     this.setState({ show: false });
-    localStorage.setItem("contact", JSON.stringify(this.state));
     e.preventDefault();
   };
   handleShow = () => {
@@ -40,19 +39,7 @@ export class Contaxt extends Component {
   };
 
   render() {
-    localStorage.setItem("aa", JSON.stringify(this.state));
     const { show } = this.state;
-    // let firstName = this.state.firstName;
-    // let lastName = this.state.lastName;
-    // let phone = this.state.phone;
-    // let gender = this.state.gender;
-    // const newUsers = {
-    //   firstName,
-    //   lastName,
-    //   phone,
-    //   gender,
-    // };
-    // console.log(this.state);
     return (
       <div>
         <Navbar className="bg-body-tertiary container">
@@ -142,7 +129,7 @@ export class Contaxt extends Component {
             </InputGroup>
           </Navbar.Brand>
         </Navbar>
-        <ContactBot />
+        <ContactBot>{this.state}</ContactBot>
       </div>
     );
   }
